@@ -3,14 +3,15 @@
 @import url('https://static.omg.lol/type/font-lato-bold.css');
 @import url('https://static.omg.lol/type/font-lato-italic.css');
 @import url('https://static.omg.lol/type/font-md-io.css');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 @import url('https://static.omg.lol/type/fontawesome-free/css/all.css');
+
 :root {
-    --foreground: #f8f8f2;
-    --background: #282a36;
-    --link: #0b7285;
-    --accent: #44475a;
-    --articleBG: #44475a;
+    --foreground: #2d3748; /* Dark slate gray */
+    --background: #f0f4f8; /* Light grayish-blue */
+    --link: #3182ce; /* Bright blue */
+    --accent: #edf2f7; /* Very light gray */
+    --articleBG: #ffffff; /* White */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,7 +41,7 @@ nav {
     background-color: var(--articleBG);
     border-radius: 0.5em;
     font-family: 'Montserrat', sans-serif;
-    line-height: 100%;
+    line-height: 1.5;
 }
 
 nav li {
@@ -52,7 +53,7 @@ nav ul {
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 0;
-    margin: 10px 15px 10px 15px;
+    margin: 10px 15px;
     align-content: center;
 }
 
@@ -62,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p, li {
-    line-height: 160%;
+    line-height: 1.6;
 }
 
 header, main, footer {
@@ -75,11 +76,11 @@ header {
     margin-top: 3em;
 }
 
-header h1 { 
+header h1 {
     text-align: center;
 }
 
-header h1 a:hover { 
+header h1 a:hover {
     text-decoration: none;
 }
 
@@ -89,18 +90,22 @@ footer p {
     text-align: center;
 }
 
-a:link { color: #ffffff; text-decoration: underline; }
-a:visited { color: #ffffff; text-decoration: underline; }
-a:hover { color: #ffffff; text-decoration: underline; }
-a:active { color: #ffffff; text-decoration: underline; }
+a {
+    color: var(--link);
+    text-decoration: underline;
+}
 
-nav li a:link, nav li a:visited {
-    color: white;
+a:hover {
+    text-decoration: none;
+}
+
+nav li a {
+    color: var(--foreground);
 }
 
 .post-info, .post-tags {
     font-size: 85%;
-    color: #ffffff;
+    color: var(--foreground);
     text-align: right;
 }
 
@@ -125,7 +130,7 @@ nav li a:link, nav li a:visited {
 hr {
     border: 0;
     height: 1px;
-    background: #333;
+    background: #ccc;
     margin: 2em 0;
 }
 
@@ -133,7 +138,7 @@ code {
     padding: .2em .3em;
     border: 1px solid var(--accent);
     white-space: pre-wrap;
-    word-wrap: break-word; 
+    word-wrap: break-word;
 }
 
 pre, code {
@@ -142,12 +147,12 @@ pre, code {
 }
 
 pre code {
-    background:  #000;
-    color:  #eee;
+    background: #000;
+    color: #eee;
     display: inline-block;
     padding: 1em;
     white-space: pre-wrap;
-    word-wrap: break-word;   
+    word-wrap: break-word;
 }
 
 table {
@@ -174,7 +179,7 @@ img {
 }
 
 div.table-container {
-    display: flex; 
+    display: flex;
     flex-direction: row;
 }
 
@@ -199,24 +204,18 @@ div.weblog-info div.item {
 
 @media only screen and (max-width: 750px) {
     div.weblog-info {
-        display: flex;
         flex-direction: column;
         gap: 0;
     }
-    div.weblog-info div.item {
-        flex: 1;
-    }
-
     div.table-container {
-        display: flex; 
         flex-direction: column;
         gap: 0;
     }
 }
 
 div.weblog-info ul {
-     margin-left: 1.2rem;
-        padding-left: 0;
+    margin-left: 1.2rem;
+    padding-left: 0;
 }
 
 div.weblog-info div.statuslol_emoji_container {
@@ -224,11 +223,11 @@ div.weblog-info div.statuslol_emoji_container {
 }
 
 .statuslol_content p {
-  padding-left: 0.3em;
-  line-height: 100%;
-  margin-bottom: 0.8em;
-  font-size: 90%;
-  font-style: italic;
+    padding-left: 0.3em;
+    line-height: 100%;
+    margin-bottom: 0.8em;
+    font-size: 90%;
+    font-style: italic;
 }
 
 .statuslol_time {
@@ -236,35 +235,20 @@ div.weblog-info div.statuslol_emoji_container {
     font-size: 0.8em;
 }
 
-h3.recent-posts:before {
-    content: "\f1da";
-    font: var(--fa-font-solid);
-    margin-right: 0.8rem;
-}
-
-h3.more-posts:before {
-    content: "\f0ca";
-    font: var(--fa-font-solid);
-    margin-right: 0.8rem;
-}
-
-h3.current-status:before {
-    content: "\f0a1";
-    font: var(--fa-font-solid);
-    margin-right: 0.8rem;
-}
-
-h3.contact-me:before {
-  content: "\f573";
-  font: var(--fa-font-solid);
-  margin-right: 0.8rem;
-}
-
+h3.recent-posts:before,
+h3.more-posts:before,
+h3.current-status:before,
+h3.contact-me:before,
 h3.about-this:before {
-    content: "\f05a";
     font: var(--fa-font-solid);
     margin-right: 0.8rem;
 }
+
+h3.recent-posts:before { content: "\f1da"; }
+h3.more-posts:before { content: "\f0ca"; }
+h3.current-status:before { content: "\f0a1"; }
+h3.contact-me:before { content: "\f573"; }
+h3.about-this:before { content: "\f05a"; }
 
 article > h1 {
     padding-bottom: 0.5em;
