@@ -160,7 +160,6 @@ table {
 
 td, th {
     padding: .75em;
-    text-align: left;
     border: 1px solid var(--accent);
 }
 
