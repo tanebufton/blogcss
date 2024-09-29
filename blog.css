@@ -233,6 +233,14 @@ div.weblog-info div.statuslol_emoji_container {
     font-size: 0.8em;
 }
 
+.search-box {
+  margin:0 auto;
+  max-width:720px;
+  color:#fff;
+  padding:24px
+}
+
+
 h3.recent-posts:before,
 h3.more-posts:before,
 h3.current-status:before,
