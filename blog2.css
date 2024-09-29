@@ -18,10 +18,10 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground: #eee;
-    --background: #222;
-    --link: #99e9f2;
+    --background: #303030;
+    --link: #F0F0F0;
     --accent: #ced4da;
-    --navbar: #111;
+    --navbar: #35453a;
     --search-results: #1b1b1b;
   }
 }
